@@ -11,62 +11,75 @@
     <button id="startsong"><i class="fas fa-music"></i></button>
 
     <div class="Health">
-        <i class="health">?</i>
-        <i class="health">?</i>
-        <i class="health">?</i>
+        <i class="health fas fa-heart"></i>
+        <i class="health fas fa-heart"></i>
+        <i class="health fas fa-heart"></i>
     </div>
-
-    <div class="game-container">
-        <h1>Jeu de Devinette</h1>
-        
-        <div class="game-info">
-            <p>Devinez un chiffre entre 0 et 9 !</p>
-            <div class="attempts">Tentatives restantes : <span id="attemptsLeft">3</span></div>
-            <button id="helpBtn" onclick="showHint()" style="display: none;">Aide <i class="fas fa-question-circle"></i></button> 
+    <section class="box">
+        <div class="box1">
+            <img id="img1"  src="IMAGE/top.png" alt="image">
+            <p>CHIFTER</p>
         </div>
 
-        <div class="input-section">
-            <input type="number" id="guessInput" min="0" max="9" placeholder="?">
-            <br><br>
-            <button id="guessBtn" onclick="makeGuess()">Deviner <i class="fas fa-play"></i></button>
-            <button id="newGameBtn" onclick="newGame()" style="display: none;">Nouvelle partie <i class="fas fa-redo"></i></button>
-        </div>
-
-        <div id="message" class="message"></div>
-
-        <div id="guessHistory" class="guess-history" style="display: none;">
-            <h3>Vos tentatives :</h3>
-            <div id="guesses"></div>
-        </div>
-    </div>
-
-    <section class="head44">
-        <div class="main-circle">
-            <div class="center-circle">0</div>
-            
-            <div class="orb">
-                <div class="small-circle">1</div>
-                <div class="small-circle">2</div>
-                <div class="small-circle">3</div>
-                <div class="small-circle">4</div>
-                <div class="small-circle">5</div>
-                <div class="small-circle">6</div>
-                <div class="small-circle">7</div>
-                <div class="small-circle">8</div>
-                <div class="small-circle">9</div>
+        <section class="box22">
+            <div class="box2">
+                <img id="img" src="IMAGE/backimg1.png" alt="image">
+                <div class="game-info">
+                    <p>Devinez un chiffre entre 0 et 9 !</p>
+                    <div class="attempts">Tentatives restantes : <span id="attemptsLeft">3</span></div>
+                </div>
             </div>
-        </div>
+        </section>      
+
+        <section class="box33">
+            <div class="box4">
+                <img id="img3"  src="IMAGE/bottom.png" alt="image">
+                <p>Tentative 1</p>
+            </div>
+            <div class="box5">
+                <img id="img3" src="IMAGE/bottom.png" alt="image">
+                <p>Tentative 2 </p>
+            </div>
+            <div class="box6">
+                <img id="img3"  src="IMAGE/bottom.png" alt="image">
+                <p>Tentative 3</p>
+            </div>
+            <div class="box7">
+                <img id="img3"  src="IMAGE/bottom.png" alt="image">
+                <div id="message" class="message"></div>
+            </div>
+        </section>
     </section>
 
-    <audio id="clicked" src="Music/click.mp3" preload="auto"></audio>
-    <audio id="dead" src="Music/death.mp3" preload="auto"></audio>
-    <audio id="gameover" src="Music/gameover.mp3" preload="auto"></audio>
-    <audio id="help" src="Music/Help.mp3" preload="auto"></audio>
-    <audio class="saudio" src="Music/Intro1.mp3" preload="auto"></audio>
-    <audio id="try" src="Music/respawn.mp3" preload="auto"></audio>
-    <audio id="win" src="Music/win.mp3" preload="auto"></audio>
-    <audio class="saudio" src="Music/Intro2.mp3" preload="auto"></audio>
+    <div class="chiffres">
+        <button onclick="makeGuess(0)" class="chiffres_containers">0</button>
+        <button onclick="makeGuess(1)" class="chiffres_containers">1</button>
+        <button onclick="makeGuess(2)" class="chiffres_containers">2</button>
+        <button onclick="makeGuess(3)" class="chiffres_containers">3</button>
+        <button onclick="makeGuess(4)" class="chiffres_containers">4</button>
+        <button onclick="makeGuess(5)" class="chiffres_containers">5</button>
+        <button onclick="makeGuess(6)" class="chiffres_containers">6</button>
+        <button onclick="makeGuess(7)" class="chiffres_containers">7</button>
+        <button onclick="makeGuess(8)" class="chiffres_containers">8</button>
+        <button onclick="makeGuess(9)" class="chiffres_containers">9</button>
+    </div>
 
+    <div class="footer">
+        <button id="newGameBtn" onclick="newGame()" style="display: none;">Nouvelle partie <i class="fas fa-redo"></i></button>
+        <button id="helpBtn" onclick="showHint()">Aide <i class="fas fa-question-circle"></i></button> 
+    </div>
+    
+    <div>
+        <audio id="clicked" src="Music/click.mp3" preload="auto"></audio>
+        <audio id="dead" src="Music/death.mp3" preload="auto"></audio>
+        <audio id="gameover" src="Music/gameover.mp3" preload="auto"></audio>
+        <audio id="help" src="Music/Help.mp3" preload="auto"></audio>
+        <audio class="saudio" src="Music/Intro1.mp3" preload="auto"></audio>
+        <audio id="try" src="Music/respawn.mp3" preload="auto"></audio>
+        <audio id="win" src="Music/win.mp3" preload="auto"></audio>
+        <audio class="saudio" src="Music/Intro2.mp3" preload="auto"></audio>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

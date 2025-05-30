@@ -3,12 +3,102 @@ body {
     font-weight: bold;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    flex-direction: column;
+    background: url(IMAGE/imgback.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: repeat(3, 25vw);
+}
+
+.box1 {
+    grid-column: 2;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    background-color: #c2ccda;
+}
+
+.box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box22 {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box33 {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box33 > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box33 > div > img {
+    z-index: 0;
+}
+
+.box33 > div > div,p {
+    position: absolute;
+    z-index: 1;
+}
+
+.box1 p {
+    font-size: 3vw;
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+}
+
+#img {
+    width: 40vw;
+    height: 20vw;
+    z-index: 0;
+    animation: cercle 5s infinite alternate;
+}
+
+@keyframes cercle {
+    to {
+        transform: rotate(0);
+    }
+
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+#img1 {
+    width: 40vw;
+    height: 10vw;
+    z-index: 0;
+}
+
+#img3  {
+    width: 30vw;
+    height: 10vw;
 }
 
 body > button {
@@ -36,86 +126,50 @@ label {
     cursor: pointer;
 }
 
-@keyframes back1 {
-    0% { background: linear-gradient(45deg, #FF0077, #AA00FF, #5500FF, #0077FF, #00CCFF); }
-    25% { background: linear-gradient(135deg, #00AACC, #0088CC, #0066CC, #0044CC, #0022CC); }
-    50% { background: linear-gradient(90deg, #FF6600, #FF3366, #FF0099, #CC00FF, #9900FF); }
-    75% { background: linear-gradient(225deg, #00FFAA, #00EECC, #00DDDD, #00CCEE, #00BBFF); }
-    100% { background: linear-gradient(315deg, #1A1A1A, #3A3A3A, #5A5A5A, #7A7A7A, #9A9A9A); }
+.health:nth-child(2) {
+    color: white;
 }
 
-@keyframes back2 {
-    0% { background: linear-gradient(270deg, #8A2BE2, #A020F0, #BA55D3, #DA70D6, #EE82EE); }
-    25% { background: linear-gradient(45deg, #2222FF, #4444FF, #6666FF, #8888FF, #AAAAFF); }
-    50% { background: linear-gradient(180deg, #FFD700, #FFA500, #FF8C00, #FF6347, #FF4500); }
-    75% { background: linear-gradient(0deg, #00FFFF, #00EEFF, #00DDFF, #00CCFF, #00BBFF); }
-    100% { background: linear-gradient(90deg, #330033, #660066, #990099, #CC00CC, #FF00FF); }
+.health:nth-child(3) {
+    color: white;
 }
 
-@keyframes back3 {
-    0% { background: linear-gradient(135deg, #00FFCC, #00EEBB, #00DD99, #00CC77, #00BB55); }
-    25% { background: linear-gradient(315deg, #6A00FF, #8C00FF, #AE00FF, #D000FF, #F200FF); }
-    50% { background: linear-gradient(45deg, #FF3300, #FF6600, #FF9900, #FFCC00, #FFFF00); }
-    75% { background: linear-gradient(270deg, #00AAFF, #0088FF, #0066FF, #0044FF, #0022FF); }
-    100% { background: linear-gradient(180deg, #000000, #111111, #222222, #333333, #444444); }
-}
-
-@keyframes back4 {
-    0% { background: linear-gradient(60deg, #FF00AA, #EE00BB, #DD00CC, #CC00DD, #BB00EE); }
-    25% { background: linear-gradient(150deg, #00EEFF, #00DDFF, #00CCFF, #00BBFF, #00AAFF); }
-    50% { background: linear-gradient(240deg, #AAFF00, #BBEE00, #CCD100, #DDEE00, #FFDD00); }
-    75% { background: linear-gradient(330deg, #FF4400, #FF6600, #FF8800, #FFAA00, #FFCC00); }
-    100% { background: linear-gradient(90deg, #440044, #660066, #880088, #AA00AA, #CC00CC); }
-}
-
-@keyframes back5 {
-    0% { background: linear-gradient(10deg, #0055FF, #0066FF, #0077FF, #0088FF, #0099FF); }
-    25% { background: linear-gradient(100deg, #FF00FF, #DD00FF, #BB00FF, #9900FF, #7700FF); }
-    50% { background: linear-gradient(190deg, #00FF55, #00FF77, #00FF99, #00FFBB, #00FFDD); }
-    75% { background: linear-gradient(280deg, #FF8800, #FF6600, #FF4400, #FF2200, #FF0000); }
-    100% { background: linear-gradient(350deg, #000011, #111122, #222233, #333344, #444455); }
-}
-
-.game-container {
-    background-color: rgba(255, 255, 255, 0.4);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 0 6px 3px rgb(203, 225, 225);
-    overflow: hidden;
+.game-info {
+    margin: 0;
+    padding: 15px;
+    color: white;
     position: absolute;
     z-index: 1;
 }
 
-h1 {
-    color: #4a5568;
-    margin-bottom: 20px;
-    font-size: 30px;
-}
-
-.game-info {
-    margin: 20px 0;
+.guess-history {
+    margin-top: 20px;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.6);
-    position: relative;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    background: #edf2f7;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
 }
 
-.game-info::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 8px;
-    height: 100%;
-    background: linear-gradient(45deg, #FF0077, #AA00FF, #5500FF, #0077FF, #00CCFF);
-    animation: back1 60s infinite alternate linear;
-    animation: var(--border-animation, back1 60s infinite alternate linear);
-    border-radius: 10px 0 0 10px;
-}    
+.guess-history h3 {
+    margin-top: 0;
+    color: #4a5568;
+}
+
+.guess-item {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #cbd5e0;
+}
+
+.success {
+    background: #c6f6d5;
+    color: #22543d;
+    border: 1px solid #9ae6b4;
+}
 
 .attempts {
     font-size: 1.2em;
@@ -144,16 +198,6 @@ input[type="number"]:focus {
     box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
 }
 
-/* Focus dynamique selon le thème */
-.theme-purple input[type="number"]:focus { border-color: #667eea; box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); }
-.theme-blue input[type="number"]:focus { border-color: #4299e1; box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1); }
-.theme-green input[type="number"]:focus { border-color: #48bb78; box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1); }
-.theme-orange input[type="number"]:focus { border-color: #ed8936; box-shadow: 0 0 0 3px rgba(237, 137, 54, 0.1); }
-.theme-pink input[type="number"]:focus { border-color: #ed64a6; box-shadow: 0 0 0 3px rgba(237, 100, 166, 0.1); }
-.theme-red input[type="number"]:focus { border-color: #f56565; box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.1); }
-.theme-teal input[type="number"]:focus { border-color: #38b2ac; box-shadow: 0 0 0 3px rgba(56, 178, 172, 0.1); }
-.theme-indigo input[type="number"]:focus { border-color: #667eea; box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); }
-
 button {
     background: linear-gradient(135deg, #4299e1, #3182ce);
     color: white;
@@ -164,7 +208,6 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
     margin: 10px;
-    animation:back1 20s infinite alternate linear;
 }
 
 button:hover {
@@ -188,45 +231,13 @@ button:disabled {
     min-height: 20px;
 }
 
-.success {
-    background: #c6f6d5;
-    color: #22543d;
-    border: 1px solid #9ae6b4;
+.chiffres {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.error {
-    background: #fed7d7;
-    color: #742a2a;
-    border: 1px solid #fc8181;
-}
-
-.info {
-    background: #bee3f8;
-    color: #2a4365;
-    border: 1px solid #90cdf4;
-}
-
-.guess-history {
-    margin-top: 20px;
-    padding: 15px;
-    background: #edf2f7;
-    border-radius: 10px;
-}
-
-.guess-history h3 {
-    margin-top: 0;
-    color: #4a5568;
-}
-
-.guess-item {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px 10px;
-    background: white;
-    border-radius: 5px;
-    border: 1px solid #cbd5e0;
-}
-
+ 
 @media (max-width: 600px) {
     .theme-selector {
         position: relative;
@@ -245,268 +256,4 @@ button:disabled {
         width: 25px;
         height: 25px;
     }
-}
-
-@media (min-width: 800px) { 
-
-    label {
-    position: absolute;
-    top: 20px;
-    right: 80px;
-    border-radius: 20%;
-    animation: back3 60s infinite alternate linear;
-}
-
-    .game-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
-    gap: 2rem;
-    width: 60vw;
-    max-width: 100%;
-    height: 70vh;
-    padding: 2rem;
-    margin: auto;
-    border-radius: 12px;
-    box-sizing: border-box;
-}
-
-    h1 {
-        grid-column: 1 / -1;
-        text-align: center;
-        font-size: 3.5vw;
-        margin-bottom: 1rem;
-        margin-top: 0;
-    }
-
-    .game-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        gap: 1rem;
-        background-color: rgba(255, 255, 255, 0.4);
-        font-size: 1.6vw;
-        margin: 0;
-        margin-top: -20px;
-        margin-bottom: 20px;
-        padding: 8px;
-    }
-
-    .input-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.2rem;
-        justify-content: center;
-        margin: 0;
-    }
-
-    #guessInput {
-        width: 12vw;
-        font-size: 1.5rem;
-        padding: 0.6rem;
-        text-align: center;
-    }
-
-    button {
-        padding: 0.7rem 1.2rem;
-        font-size: 1rem;
-        background-color: #3498db;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    #guessBtn {
-        width: 10vw;
-    }
-
-    #newGameBtn {
-        width: 10vw;
-    }
-
-    .message {
-        font-size: 1.1rem;
-        color: #e74c3c;
-        margin-top: 1rem;
-        margin: 0;
-        padding: 18px;
-        min-height: 30px;
-        margin-top: -20px;
-    }
-
-    .guess-history {
-        padding: 1rem;
-        border-radius: 8px;
-        margin-top: 0;
-    }
-
-    .guess-history h3 {
-        margin-top: 0;
-    }
-
-    #guesses {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .head44 {
-        display: block;
-        position: relative;
-        width: 600px;
-        height: 600px;
-        z-index: 0;
-        position: static;
-        transform: translate(0%, -50%);
-        margin-bottom: -600px;
-        z-index: 0;
-}
-
-    .main-circle {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        position: relative;
-}
-
-    .center-circle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 8vw;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        animation: pulse 2s ease-in-out infinite alternate;
-}
-
-    .orb {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 80%;
-        height: 80%;
-        transform: translate(-50%, -50%);
-        animation: rotate 4s linear infinite alternate;
-}
-
-    .small-circle {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 4vw;
-}
-
-    .small-circle:nth-child(1) {
-        transform: translateX(0) rotate(0deg);
-        transform-origin: 0 240px;        
-        animation: rotate0 4s ease infinite;
-}
-
-    .small-circle:nth-child(2) {
-        transform: translateX(0) rotate(40deg);
-        transform-origin: 0 240px;
-        animation: rotate0 8s ease infinite;
-}
-
-    .small-circle:nth-child(3) {
-        transform: translateX(0) rotate(80deg);
-        transform-origin: 0 240px;
-        animation: rotate0 8s ease infinite;
-}
-
-    .small-circle:nth-child(4) {
-        transform: translateX(0) rotate(120deg);
-        transform-origin: 0 240px;
-        animation: rotate0 8s ease infinite;
-}
-
-    .small-circle:nth-child(5) {
-        transform: translateX(0) rotate(160deg);
-        transform-origin: 0 240px;
-        animation: rotate0 8s ease infinite;
-}
-
-    .small-circle:nth-child(6) {
-        transform: translateX(0) rotate(200deg);
-        transform-origin: 0 240px;
-        animation: rotate0 8s ease infinite;
-}
-
-    .small-circle:nth-child(7) {
-        transform: translateX(0) rotate(240deg);
-        transform-origin: 0 240px;
-        animation: rotate0 8s ease infinite;
-}
-
-    .small-circle:nth-child(8) {
-        transform: translateX(0) rotate(280deg);
-        transform-origin: 0 240px;
-        animation: rotate0 8s ease infinite;
-}
-
-    .small-circle:nth-child(9) {
-        transform: translateX(0) rotate(320deg);
-        transform-origin: 0 240px;
-        animation: rotate0 8s ease infinite;
-}
-
-    @keyframes rotate {
-        from {
-            transform: translate(-50%, -50%) rotate(0deg) scale(1.1);
-        }
-        to {
-            transform: translate(-50%, -50%) rotate(360deg) scale(0);
-        }    
-}
-
-    @keyframes rotate0 {
-        0% {
-            border: 3px solid blue;
-        }
-        25% {
-             border: 2px solid rgb(98, 14, 216);
-        }
-        50% {
-             border: 1px solid rgb(73, 13, 93);
-        }
-        75% {
-             border: 2px solid rgb(201, 29, 207);
-        }
-        100% {
-             border: 3px solid violet;
-        }
-}
-
-    @keyframes pulse {
-        from {
-            transform: translate(-50%, -50%) scale(.5) rotate(0deg);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border: 3px solid blue;
-        }
-        to {
-            transform: translate(-50%, -50%) scale(1.1) rotate(360deg);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgb(73, 13, 93);
-        }
-}
-
 }
