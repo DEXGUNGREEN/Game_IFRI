@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <label for="#">Activer le son <i class="fas fa-arrow-right"></i></label>
+    <label for="#">Son <i class="fas fa-arrow-right"></i></label>
     <button id="startsong"><i class="fas fa-music"></i></button>
 
     <div class="Health">
@@ -26,6 +26,11 @@
         </div>
 
         <div class="input-section">
+
+            <div class="health-bar">
+            <div class="health-fill" id="healthFill"></div>
+            </div>
+              
             <input type="number" id="guessInput" min="0" max="9" placeholder="?">
             <br><br>
             <button id="guessBtn" onclick="makeGuess()">Deviner <i class="fas fa-play"></i></button>

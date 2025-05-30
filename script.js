@@ -2,6 +2,10 @@
 const element = document.body;
 const animations = ['back1', 'back2', 'back3', 'back4', 'back5'];
 
+//fonction pour la bar de vie
+const healthFill = document.getElementById('healthFill');
+
+
 function applyRandomAnimation() {
     element.style.animation = 'none';
     void element.offsetWidth;
@@ -49,6 +53,12 @@ function initGame() {
     document.getElementById('guessHistory').style.display = 'none';
     document.getElementById('guesses').innerHTML = '';
     helpBtn.style.display = 'inline-block'; 
+
+    // 🔄 Réinitialisation de la barre de vie
+    healthFill.style.width = "100%";
+    healthFill.style.backgroundColor = "#0f0";
+    
+    
 }
 
 function makeGuess() {
@@ -66,6 +76,12 @@ function makeGuess() {
     updateGuessHistory();
     attemptsLeft--;
     document.getElementById('attemptsLeft').textContent = attemptsLeft;
+
+        
+    healthFill.style.width = `${(attemptsLeft / 3) * 100}%`;
+    if (attemptsLeft === 2) healthFill.style.backgroundColor = "#cc0"; // jaune
+    else if (attemptsLeft === 1) healthFill.style.backgroundColor = "#f00"; // rouge
+
     if (guess === randomNumber) {
         win.play()
         messageEl.textContent = `🎉 Félicitations ! Vous avez trouvé le chiffre ${randomNumber} !`;
